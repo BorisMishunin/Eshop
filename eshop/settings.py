@@ -56,7 +56,7 @@ ROOT_URLCONF = 'eshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,7 +82,7 @@ DATABASES = {
         'USER': 'eshop_user',
         'PASSWORD': 'django1234',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'PORT': '5432',                      # Set to empty string for default.
     }
 }
 
@@ -104,4 +104,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'

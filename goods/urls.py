@@ -8,6 +8,6 @@ urlpatterns = [
     # url(r'^$', 'webcams.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^test/', 'goods.views.test'),
-
+    url(r'^$', 'goods.views.index'),
 
 ]
