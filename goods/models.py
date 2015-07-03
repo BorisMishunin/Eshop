@@ -53,7 +53,7 @@ class PropertiesValues(models.Model):
     Value = models.TextField()
 
     def __unicode__(self):
-        return self.Property
+        return self.Value
 
     class Meta:
         verbose_name = "Значение свойства"
@@ -72,13 +72,12 @@ class PropertiesByCategories(models.Model):
         verbose_name_plural = 'Свойства по категориям товара'
 
 class WaresProperties(models.Model):
-    Name = models.CharField("Название", max_length=150)
     Ware = models.ForeignKey(Wares, verbose_name='Товар')
     Property = models.ForeignKey(Properties, verbose_name='Свойство')
     Value = models.ForeignKey(PropertiesValues, verbose_name='Значение свойства')
 
     def __unicode__(self):
-        return self.Name
+        return self.Ware.Name
 
     class Meta:
         verbose_name = "Значение свойств товара"
